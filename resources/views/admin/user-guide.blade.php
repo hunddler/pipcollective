@@ -1,3 +1,6 @@
+@php
+$var_page = 'User Guide';
+@endphp
 @extends('componants.main-layout')
 <title>User Guide</title>
 @section('content')
@@ -25,7 +28,7 @@
 
                     </div>
                     <div class="">
-                        <button class="btn btn-primary sm-btn" data-bs-toggle="modal" data-bs-target="#add-penalty">Add New</button>
+                        <button class="btn btn-primary sm-btn" data-bs-toggle="modal" data-bs-target="#add-guide">Add New</button>
                     </div>
                     <!--end::Wrapper-->
                 </div>
@@ -66,15 +69,17 @@
                     </tr>
                 </thead>
                 <tbody class="fw-semibold text-gray-600">
+                    @if(count($userguide) > 0)
+                    @foreach($userguide as $guide)
                     <tr>
                         <td data-label="Select" class="mb-none" data-label="Select">
                             <div class="form-check form-check-sm form-check-custom form-check-solid">
                                 <input class="form-check-input" type="checkbox" value="1" />
                             </div>
                         </td>
-                        <td data-label="Type">Commercial</td>
-                        <td data-label="Location">Lahore, Punjab</td>
-                        <td data-label="Status" class="text-success">Active</td>
+                        <td data-label="Type">{{$guide->title}}</td>
+                        <td data-label="Location"> <i class="ki-outline ki-exit-up"></i> {{$guide->file_name}} </td>
+                        <td data-label="Status">{{$guide->video_link}}</td>
                         <td data-label="Action">
                         
                             <!--begin::Menu-->
@@ -84,8 +89,8 @@
                                 <!--begin::Menu item-->
                                 <div class="d-flex">
 
-                                    <a href="#" class="nav-link px-3"><i class="ki-outline ki-pencil"></i></a>
-                                    <a href="#" class="nav-link px-3" data-kt-ecommerce-order-filter="delete_row"><i class="ki-outline ki-trash"></i></a>
+                                    <a href="javascript:void(0)" onclick="edituserguide({{$guide->id}},'{{$guide->title}}','{{$guide->video_link}}','{{$guide->file_name}}','{{$guide->file_type}}')"  data-bs-toggle="modal" data-bs-target="#edit-user-guide" class="nav-link px-3"><i class="ki-outline ki-pencil"></i></a>
+                                    <a href="javascript:void(0)" onclick="deleteuserguide({{$guide->id}})" data-bs-toggle="modal" data-bs-target="#delete-user-guide" class="nav-link px-3" data-kt-ecommerce-order-filter="delete_row"><i class="ki-outline ki-trash"></i></a>
                                 
                                 </div>
                                 <!--end::Menu item-->
@@ -93,6 +98,8 @@
                             <!--end::Menu-->
                         </td>
                     </tr>
+                    @endforeach
+                    @endif
                  
 
                 </tbody>
@@ -108,4 +115,8 @@
     </div>
     <!--end::Body-->
 </div>
+
+
+
+
 @endsection

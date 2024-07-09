@@ -17,6 +17,10 @@
 		<link href="{{asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 		<script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
 	</head>
 	<!--end::Head-->
@@ -111,11 +115,16 @@
 		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
 			<i class="ki-outline ki-arrow-up"></i>
 		</div>
+
+		@include('componants.modal')
+		
 		<!--end::Scrolltop-->
 
 		<!--begin::Javascript-->
 		<script>var hostUrl = "assets/";</script>
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="{{asset('custom/user-guide.js')}}"></script>
 		<script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
 		<script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
 		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>

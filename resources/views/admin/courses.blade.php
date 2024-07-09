@@ -1,3 +1,7 @@
+@php
+$var_page = 'Courses';
+@endphp
+
 @extends('componants.main-layout')
 <title>courses</title>
 @section('content')
