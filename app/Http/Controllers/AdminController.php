@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Exception;
 use Illuminate\Support\Facades\Http;
 
+
 class AdminController extends Controller
 {
 
@@ -20,17 +21,40 @@ class AdminController extends Controller
     
     public function Dashboard()
     {
-        $userguide = UserGuide::get();
+        $userguide = UserGuide::paginate(10);
         return view('admin.user-guide',compact('userguide'));
 
     }
 
     public function Courses()
     {
-    
-        return view('admin.courses');
+        $userguide = UserGuide::get();
+        return view('admin.courses',compact('userguide'));
+
 
     }
+
+    public function Inputs()
+    {
+    
+        return view('admin.inputs');
+
+    }
+
+    public function Setfiles()
+    {
+    
+        return view('admin.setfiles');
+
+    }
+
+    public function Faq()
+    {
+    
+        return view('admin.Faq');
+
+    }
+
 
     public function storeUserGuide(Request $request)
     {
@@ -80,7 +104,7 @@ class AdminController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'video_link' => 'required|url',
-            // 'file' => 'required|mimes:pdf,csv,xlsx|max:2048',
+            'file' => 'mimes:pdf,csv,xlsx|max:2048',
         ]);
     
         if ($validator->fails()) {
@@ -104,14 +128,18 @@ class AdminController extends Controller
         if($request->has('file'))
         {
         $userGuide->file_type = $this->sendimagetodirectory($request->file('file'));
-        }else
-        {
-        $userGuide->file_type = $request->edit_file;
         }
         $userGuide->save();
     
         return response()->json(['success' => 'User Guide Updated successfully.']);
     }
+
+    public function DownloadFile($file_name) 
+     {
+
+    $file_path = public_path('assets/user_guides/'.$file_name);
+    return response()->download($file_path);
+      }
 
     public static function sendimagetodirectory($imagename)
 

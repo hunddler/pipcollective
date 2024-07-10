@@ -1,11 +1,10 @@
 @php
-$var_page = 'Courses';
+$var_page = 'Setfiles';
 @endphp
 
 @extends('componant.main-layout')
-<title>Courses</title>
+<title>Setfiles</title>
 @section('content')
-
 
 <div class="card mb-5 mb-xl-8">
     <div class="card-body py-lg-8 py-sm-0 mb-4">
@@ -16,7 +15,7 @@ $var_page = 'Courses';
                     <div class="d-md-flex d-sm-flex flex-md-row flex-sm-column align-items-center justify-content-between align-items-start">
                         <div class="d-flex flex-column">
                             <div>
-                                <h2>Course</h2>
+                                <h2>Setfiles</h2>
                             </div>
                             <div>
                                 <p>short description goes here</p>
@@ -30,7 +29,7 @@ $var_page = 'Courses';
                             <div>
                                 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-        Add Course</button>
+        Add New</button>
                             </div>
                         </div>
                     </div>
@@ -52,9 +51,8 @@ $var_page = 'Courses';
                     />
                 </div>
             </th>
-            <th scope="col" class="mb-none admin-table">Course Tittle</th>
-            <th scope="col" class="admin-table">Instructions File</th>
-            <th scope="col" class="admin-table">Video URL</th>
+            <th scope="col" class="mb-none admin-table"> Tittle</th>
+            <th scope="col" class="admin-table">File</th>
             <th scope="col" class="admin-table">Action</th>
         </tr>
     </thead>
@@ -65,9 +63,8 @@ $var_page = 'Courses';
                     <input class="form-check-input" type="checkbox" value="1" />
                 </div>
             </td>
-            <td data-label="Name" class="mb-none">My Accounts</td>
-            <td data-label="Parking Space">File_name.jsx <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Type">https://www.vimoe.com </td>
+            <td data-label="Name" class="mb-none">Forex Pairs</td>
+            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
             <td data-label="Status" class="text-success">
                 <div class="action-icon">
                     <div class="d-flex  align-items-center">
@@ -91,9 +88,8 @@ $var_page = 'Courses';
                     <input class="form-check-input" type="checkbox" value="1" />
                 </div>
             </td>
-            <td data-label="Name" class="mb-none">My Accounts</td>
-            <td data-label="Parking Space">File_name.jsx <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Type">https://www.vimoe.com </td>
+            <td data-label="Name" class="mb-none">Forex Pairs</td>
+            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
             <td data-label="Status" class="text-success">
                 <div class="action-icon">
                     <div class="d-flex  align-items-center">
@@ -117,9 +113,8 @@ $var_page = 'Courses';
                     <input class="form-check-input" type="checkbox" value="1" />
                 </div>
             </td>
-            <td data-label="Name" class="mb-none">My Accounts</td>
-            <td data-label="Parking Space">File_name.jsx <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Type">https://www.vimoe.com </td>
+            <td data-label="Name" class="mb-none">Forex Pairs</td>
+            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
             <td data-label="Status" class="text-success">
                 <div class="action-icon">
                     <div class="d-flex  align-items-center">
@@ -143,9 +138,8 @@ $var_page = 'Courses';
                     <input class="form-check-input" type="checkbox" value="1" />
                 </div>
             </td>
-            <td data-label="Name" class="mb-none">My Accounts</td>
-            <td data-label="Parking Space">File_name.jsx <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Type">https://www.vimoe.com </td>
+            <td data-label="Name" class="mb-none">Forex Pairs</td>
+            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
             <td data-label="Status" class="text-success">
                 <div class="action-icon">
                     <div class="d-flex  align-items-center">
@@ -169,9 +163,8 @@ $var_page = 'Courses';
                     <input class="form-check-input" type="checkbox" value="1" />
                 </div>
             </td>
-            <td data-label="Name" class="mb-none">My Accounts</td>
-            <td data-label="Parking Space">File_name.jsx <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Type">https://www.vimoe.com </td>
+            <td data-label="Name" class="mb-none">Forex Pairs</td>
+            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
             <td data-label="Status" class="text-success">
                 <div class="action-icon">
                     <div class="d-flex  align-items-center">
@@ -189,7 +182,6 @@ $var_page = 'Courses';
                 </div>
             </td>
         </tr>
-
 
     </tbody>
 </table>
@@ -242,6 +234,4 @@ $var_page = 'Courses';
     </div>
     <!--end::Body-->
 </div>
-
-
 @endsection

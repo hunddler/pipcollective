@@ -26,7 +26,12 @@ class HomeController extends Controller
 
         if (Auth::user()->role == 'admin') {
             return redirect()->to('admin/user-guide');
-        } else {
+        } else if(Auth::user()->role == 'users')
+        {
+        return redirect()->to('user/user-guide');
+        } 
+        else
+        {
             Auth::logout();
             return back()->with('error', 'You have not Access For Officer');
         }
