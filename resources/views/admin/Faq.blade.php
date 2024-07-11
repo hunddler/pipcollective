@@ -1,5 +1,6 @@
 @php
 $var_page = 'FAQs';
+$var_tab = 'Education';
 @endphp
 
 @extends('componant.main-layout')

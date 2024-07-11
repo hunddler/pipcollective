@@ -1,5 +1,6 @@
 @php
 $var_page = 'User Guide';
+$var_tab = 'Education';
 @endphp
 
 @extends('componant.main-layout')
@@ -27,6 +28,11 @@ $var_page = 'User Guide';
                             <div>
                                 <input type="text" id="myInput" placeholder="Search..." class="form-control input-sm" name="">
                             </div>
+
+                            
+                            <div class="d-flex justify-content-end align-items-center d-none" id="delete-selected-toolbar" data-kt-customer-table-toolbar="selected">
+                                <button type="button" class="btn btn-danger" onclick="deletebulkguide();" data-bs-toggle="modal" data-bs-target="#delete-guide-bulk">Delete Selected</button>
+                            </div>
                             <div>
                                 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
         <i class="ki-outline ki-plus fs-2"></i>Add New</button> -->
@@ -38,7 +44,14 @@ $var_page = 'User Guide';
                 
                 
                     <!--begin::Table-->
-                    <x-customer-table titleColumnName="Title" :data="$userguide" />
+                    <x-customer-table 
+                    titleColumnName="User Guide Title" 
+                    :data="$userguide"
+                    editModalId="edit-user-guide" 
+                    deleteModalId="delete-user-guide"
+                    editFunction="edituserguide" 
+                    deleteFunction="deleteuserguide" 
+                    />
                                          <!--end::Table-->
 
     <div class="d-flex flex-stack flex-wrap pt-10">

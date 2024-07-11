@@ -1,5 +1,6 @@
 @php
 $var_page = 'Setfiles';
+$var_tab = 'Education';
 @endphp
 
 @extends('componant.main-layout')
@@ -24,12 +25,16 @@ $var_page = 'Setfiles';
 
                         <div class="d-flex flex-row align-items-center gap-3">
                             <div>
-                                <input type="text" placeholder="Search..." class="form-control input-sm" name="">
+                                <input type="text" id="myInput" placeholder="Search..." class="form-control input-sm" name="">
+                            </div>
+
+                            <div class="d-flex justify-content-end align-items-center d-none" id="delete-selected-toolbar" data-kt-customer-table-toolbar="selected">
+                                <button type="button" class="btn btn-danger" onclick="deletebulksetfile();" data-bs-toggle="modal" data-bs-target="#delete-setfile-bulk">Delete Selected</button>
                             </div>
                             <div>
                                 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-        Add New</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-setfile">
+                            Add New</button>
                             </div>
                         </div>
                     </div>
@@ -56,25 +61,28 @@ $var_page = 'Setfiles';
             <th scope="col" class="admin-table">Action</th>
         </tr>
     </thead>
-    <tbody class="fw-semibold text-gray-600">
+    <tbody class="fw-semibold text-gray-600" id="myTable">
+        @if(count($Setfile) > 0)
+        @foreach($Setfile as $file)
         <tr class="card-body border-top">
             <td data-label="Select" class="mb-none" data-label="Select">
                 <div class="form-check form-check-sm form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" value="1" />
+                    <input class="form-check-input checkbox" type="checkbox" value="{{$file->id}}" />
                 </div>
             </td>
-            <td data-label="Name" class="mb-none">Forex Pairs</td>
-            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
+
+            <td data-label="Name" class="mb-none">{{$file->title}}</td>
+            <td data-label="Parking Space">{{$file->file_name}} <a href="{{url('download-file/'.$file->file_type)}}"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
             <td data-label="Status" class="text-success">
                 <div class="action-icon">
                     <div class="d-flex  align-items-center">
                         <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_one_time_password">
+                        <button type="button" onclick="editsetfile({{$file->id}},'{{$file->title}}','{{$file->file_name}}','{{$file->file_type}}')" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5" data-bs-toggle="modal" data-bs-target="#edit-setfile">
                             <i class="ki-outline ki-pencil fs-3"></i>
                         </button>
                         <!--end::Button-->
                         <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px " id="kt_users_delete_two_step">
+                        <button type="button" onclick="deletesetfile({{$file->id}})" class="btn btn-icon btn-active-light-primary w-30px h-30px" data-bs-toggle="modal" data-bs-target="#delete-setfile" id="kt_users_delete_two_step">
                             <i class="ki-outline ki-trash fs-3"></i>
                         </button>
                         <!--end::Button-->
@@ -82,146 +90,26 @@ $var_page = 'Setfiles';
                 </div>
             </td>
         </tr>
-        <tr class="card-body border-top">
-            <td data-label="Select" class="mb-none" data-label="Select">
-                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" value="1" />
-                </div>
-            </td>
-            <td data-label="Name" class="mb-none">Forex Pairs</td>
-            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Status" class="text-success">
-                <div class="action-icon">
-                    <div class="d-flex  align-items-center">
-                        <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_one_time_password">
-                            <i class="ki-outline ki-pencil fs-3"></i>
-                        </button>
-                        <!--end::Button-->
-                        <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px " id="kt_users_delete_two_step">
-                            <i class="ki-outline ki-trash fs-3"></i>
-                        </button>
-                        <!--end::Button-->
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="card-body border-top">
-            <td data-label="Select" class="mb-none" data-label="Select">
-                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" value="1" />
-                </div>
-            </td>
-            <td data-label="Name" class="mb-none">Forex Pairs</td>
-            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Status" class="text-success">
-                <div class="action-icon">
-                    <div class="d-flex  align-items-center">
-                        <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_one_time_password">
-                            <i class="ki-outline ki-pencil fs-3"></i>
-                        </button>
-                        <!--end::Button-->
-                        <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px " id="kt_users_delete_two_step">
-                            <i class="ki-outline ki-trash fs-3"></i>
-                        </button>
-                        <!--end::Button-->
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="card-body border-top">
-            <td data-label="Select" class="mb-none" data-label="Select">
-                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" value="1" />
-                </div>
-            </td>
-            <td data-label="Name" class="mb-none">Forex Pairs</td>
-            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Status" class="text-success">
-                <div class="action-icon">
-                    <div class="d-flex  align-items-center">
-                        <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_one_time_password">
-                            <i class="ki-outline ki-pencil fs-3"></i>
-                        </button>
-                        <!--end::Button-->
-                        <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px " id="kt_users_delete_two_step">
-                            <i class="ki-outline ki-trash fs-3"></i>
-                        </button>
-                        <!--end::Button-->
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="card-body border-top">
-            <td data-label="Select" class="mb-none" data-label="Select">
-                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" value="1" />
-                </div>
-            </td>
-            <td data-label="Name" class="mb-none">Forex Pairs</td>
-            <td data-label="Parking Space">Lot Size Settings <a href="#"><i class="ki-outline ki-exit-down fs-2x ms-n1 text-gray-500 admin-icon"></i></a></td>
-            <td data-label="Status" class="text-success">
-                <div class="action-icon">
-                    <div class="d-flex  align-items-center">
-                        <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_one_time_password">
-                            <i class="ki-outline ki-pencil fs-3"></i>
-                        </button>
-                        <!--end::Button-->
-                        <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px " id="kt_users_delete_two_step">
-                            <i class="ki-outline ki-trash fs-3"></i>
-                        </button>
-                        <!--end::Button-->
-                    </div>
-                </div>
-            </td>
-        </tr>
+        @endforeach
+        @endif
+
+      
+      
 
     </tbody>
 </table>
 <!--end::Table-->
 
-    <div class="d-flex flex-stack flex-wrap pt-10">
-        <!--begin::Pages-->
-    <ul class="pagination">
-        <li class="page-item previous">
-            <a href="#" class="page-link">
-                <i class="previous"></i>
-            </a>
-        </li>
-        <li class="page-item active">
-            <a href="#" class="page-link">1</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">2</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">3</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">4</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">5</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">6</a>
-        </li>
-        <li class="page-item next">
-            <a href="#" class="page-link">
-                <i class="next"></i>
-            </a>
-        </li>
-    </ul>
-    <!--end::Pages-->
-    <div class="fs-6 fw-semibold text-gray-700">Showing 1 to 10 of 50 entries</div>
-    
+<div class="d-flex flex-stack flex-wrap pt-10">
+    <!--begin::Pages-->
+<ul class="pagination">
+   
+    {{ $Setfile->links( "pagination::bootstrap-4") }}
+
+</ul>
+<!--end::Pages-->
+<div class="fs-6 fw-semibold text-gray-700">Showing {{$Setfile->count()}} of {{ $Setfile->total() }} of {{ $Setfile->total() }} entries</div>
+
 </div>
     <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar"></div>
 

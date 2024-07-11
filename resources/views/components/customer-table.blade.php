@@ -24,7 +24,7 @@
         <tr class="card-body border-top">
             <td data-label="Select" class="mb-none" data-label="Select">
                 <div class="form-check form-check-sm form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" value="{{$item->id}}" />
+                    <input class="form-check-input checkbox" type="checkbox" value="{{$item->id}}" />
                 </div>
             </td>
 
@@ -36,12 +36,10 @@
                 <div class="action-icon">
                     <div class="d-flex  align-items-center">
                         <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5"onclick="edituserguide({{ $item->id }}, '{{ $item->title }}', '{{ $item->video_link }}', '{{ $item->file_name }}', '{{ $item->file_type }}')" data-bs-toggle="modal" data-bs-target="#edit-user-guide">
+                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px me-5" onclick="{{ $editFunction }}({{ $item->id }}, '{{ $item->title }}', '{{ $item->video_link }}', '{{ $item->file_name }}', '{{ $item->file_type }}')" data-bs-toggle="modal" data-bs-target="#{{ $editModalId }}">
                             <i class="ki-outline ki-pencil fs-3"></i>
                         </button>
-                        <!--end::Button-->
-                        <!--begin::Button-->
-                        <button type="button"  class="btn btn-icon btn-active-light-primary w-30px h-30px " onclick="deleteuserguide({{ $item->id }})" data-bs-toggle="modal" data-bs-target="#delete-user-guide">
+                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px" onclick="{{ $deleteFunction }}({{ $item->id }})" data-bs-toggle="modal" data-bs-target="#{{ $deleteModalId }}">
                             <i class="ki-outline ki-trash fs-3"></i>
                         </button>
                         <!--end::Button-->
