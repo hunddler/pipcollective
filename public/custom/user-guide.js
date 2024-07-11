@@ -192,4 +192,47 @@ $(document).ready(function() {
           });
         });
       });
+
+
+      function deletebulkguide() {
+        var selectedOptions = [];
+        $('.checkbox:checked').each(function() {
+            selectedOptions.push($(this).val());
+
+        });
+
+        $('#guide_delete_bulk').val(selectedOptions.join(','));
+
+
+    }
+
+
+
+    $(document).ready(function() {
+        $('#guide-bulk-course-form').on('submit', function(e) {
+                e.preventDefault();
+
+               
+        
+                var formData = new FormData(this);
+        
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        toastr.success(response.success);
+                        setTimeout(function() {
+                            location.reload();
+                        }, 2000);
+                    },
+                    error: function(response) {
+                        $('#error-messages-delete-guide-bulk').html(response.errors);
+                    }
+                });
+            });
+                
+        });
     
