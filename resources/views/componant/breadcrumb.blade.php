@@ -1,3 +1,15 @@
+@php
+$tab = '';
+if($var_tab !== '')
+{
+$tab = $var_tab;
+}else
+{
+$tab = 'Education';
+}
+
+
+@endphp
 <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
     <!--begin::Item-->
     <li class="breadcrumb-item text-white fw-bold lh-1">
@@ -13,7 +25,7 @@
     </li>
     <!--end::Item-->
     <!--begin::Item-->
-    <li class="breadcrumb-item text-gray-600 fw-bold lh-1">Education</li>
+    <li class="breadcrumb-item text-gray-600 fw-bold lh-1">{{$tab}}</li>
     <!--end::Item-->
     <!--begin::Item-->
     <li class="breadcrumb-item">

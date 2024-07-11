@@ -1,3 +1,14 @@
+@php
+$tab = '';
+if($var_tab !== '')
+{
+$tab = $var_tab;
+}else
+{
+$tab = 'Education';
+}
+@endphp
+
 <div style="background-image: url('{{ asset('assets/media/auth/bg.png') }}'); background-size:cover" id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: false, lg: true}" data-kt-sticky-name="app-header-sticky" data-kt-sticky-offset="{default: false, lg: '300px'}" >
     <!--begin::Header container-->
     <div class="app-container container-xxl d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
@@ -15,6 +26,8 @@
                 <img alt="Logo" src="{{asset('assets/media/logos/logo.png')}}" class="h-45px d-none d-sm-block" />
             </a>
         </div>
+
+
         <!--end::Logo-->
         <!--begin::Header wrapper-->
         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
@@ -34,7 +47,7 @@
                         <!--end:Menu link-->
                     </div>
                     <!--end:Menu item-->
-
+                       
 
                     <!--begin:Menu item-->
                     <div class="menu-item me-0 me-lg-2">
@@ -71,17 +84,17 @@
 
                     <!--begin:Menu item-->
                     @if(auth::user()->role == 'admin')
-                    <div class="menu-item me-0 me-lg-2">
+                    <div class="menu-item me-0 @if($tab == 'General') here menu-here-bg @endif me-lg-2" onclick="gettab('General')">
                         <!--begin:Menu link-->
                         <span class="menu-link">
-                            <a href="javascript:void(0)">
+                            <a href="{{url('admin/accounts')}}">
                                 <span class="menu-title">General</span>
                             </a>
                         </span>
                         <!--end:Menu link-->
                     </div>
 
-                    <div class="menu-item here menu-here-bg me-0 me-lg-2">
+                    <div class="menu-item  @if($tab == 'Education') here menu-here-bg @endif me-0 me-lg-2" onclick="gettab('Education')">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <a href="{{url('admin/user-guide')}}">
