@@ -21,6 +21,6 @@
     </li>
     <!--end::Item-->
     <!--begin::Item-->
-    <li class="breadcrumb-item text-white fw-bold lh-1">User Guide</li>
+    <li class="breadcrumb-item text-white fw-bold lh-1"><?php echo e($var_page); ?></li>
     <!--end::Item-->
 </ul><?php /**PATH C:\xampp\htdocs\pipcollective\resources\views/componants/breadcrumb.blade.php ENDPATH**/ ?>

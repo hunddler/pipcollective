@@ -36,3 +36,7 @@ Route::get('user/inputs',[App\Http\Controllers\UserController::class, 'UserInput
 Route::get('user/faqs',[App\Http\Controllers\UserController::class, 'UserFaq']);
 
 
+
+Route::get('/user/dashboard', function () {
+    return view('users.dashboard');
+});

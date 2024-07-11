@@ -86,11 +86,9 @@
 										<!--begin::Col-->
                                         
 										<div class="col-xl-9 ps-xl-6">
-
 											<!--begin::Tables Widget 5-->
 											@yield('content')
 											<!--end::Tables Widget 5-->
-											
 										</div>
 										<!--end::Col-->
 									</div>

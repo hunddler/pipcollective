@@ -21,6 +21,6 @@
     </li>
     <!--end::Item-->
     <!--begin::Item-->
-    <li class="breadcrumb-item text-white fw-bold lh-1">{{$var_page}}</li>
+    <li class="breadcrumb-item text-white fw-bold lh-1"></li>
     <!--end::Item-->
 </ul>
