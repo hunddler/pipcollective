@@ -37,10 +37,10 @@ $tab = 'Education';
                 <div class="menu menu-rounded menu-active-bg menu-state-primary menu-column menu-lg-row menu-title-gray-700 menu-icon-gray-500 menu-arrow-gray-500 menu-bullet-gray-500 my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
                     <!--begin:Menu item-->
                     @if(auth::user()->role == 'users')
-                    <div class="menu-item me-0 me-lg-2">
+                    <div class="menu-item me-0 me-lg-2 @if($tab == 'Dashboard') here menu-here-bg @endif">
                         <!--begin:Menu link-->
                         <span class="menu-link">
-                            <a href="javascript:void(0)">
+                            <a href="{{url('user/dashboard')}}">
                                 <span class="menu-title">Dashboard</span>
                             </a>
                         </span>
@@ -61,17 +61,27 @@ $tab = 'Education';
                     </div>
                     <!--end:Menu item-->
 
-                    <div class="menu-item me-0 me-lg-2">
+                    <div class="menu-item me-0 me-lg-2 @if($tab == 'EA') here menu-here-bg @endif">
                         <!--begin:Menu link-->
                         <span class="menu-link">
-                            <a href="javascript:void(0)">
+                            <a href="{{url('user/eadownload')}}">
+                                <span class="menu-title">EA & Setfiles</span>
+                            </a>
+                        </span>
+                        <!--end:Menu link-->
+                    </div>
+
+                    <div class="menu-item me-0 me-lg-2 @if($tab == 'Calculater') here menu-here-bg @endif">
+                        <!--begin:Menu link-->
+                        <span class="menu-link">
+                            <a href="{{url('user/upload-history')}}">
                                 <span class="menu-title">Calculators</span>
                             </a>
                         </span>
                         <!--end:Menu link-->
                     </div>
 
-                    <div class="menu-item here menu-here-bg me-0 me-lg-2">
+                    <div class="menu-item me-0 me-lg-2 @if($tab == 'User-Education') here menu-here-bg @endif">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <a href="{{url('user/user-guide')}}">

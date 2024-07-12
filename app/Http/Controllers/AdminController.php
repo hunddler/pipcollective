@@ -44,12 +44,7 @@ class AdminController extends Controller
 
     
 
-    public function Faq()
-    {
-    
-        return view('admin.Faq');
-
-    }
+   
 
     public function Accounts()
     {
@@ -259,6 +254,12 @@ class AdminController extends Controller
 
     $file_path = public_path('assets/user_guides/'.$file_name);
     return response()->download($file_path);
+    }
+
+    public function UploadEA()
+    {
+        return view('admin.upload-ea');
+
     }
 
 

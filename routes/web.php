@@ -26,8 +26,9 @@ Route::post('upload-user-guide',[App\Http\Controllers\AdminController::class, 's
 Route::post('admin/delete-user-guide',[App\Http\Controllers\AdminController::class, 'DeleteUserGuide']);
 Route::post('update-user-guide',[App\Http\Controllers\AdminController::class, 'UpdateUserGuide']);
 Route::get('admin/inputs',[App\Http\Controllers\AdminController::class, 'Inputs']);
+Route::get('admin/upload-ea',[App\Http\Controllers\AdminController::class, 'UploadEA']);
 
-Route::get('admin/faqs',[App\Http\Controllers\AdminController::class, 'Faq']);
+
 Route::get('download-file/{file_name}',[App\Http\Controllers\AdminController::class, 'DownloadFile']);
 Route::get('admin/accounts',[App\Http\Controllers\AdminController::class, 'Accounts']);
 Route::post('upload-courses',[App\Http\Controllers\AdminController::class, 'storeCourses']);
@@ -43,17 +44,22 @@ Route::post('update-setfile',[App\Http\Controllers\SetFileController::class, 'Up
 Route::post('admin/delete-setfile',[App\Http\Controllers\SetFileController::class, 'DeleteSetfile']);
 Route::post('admin/delete-setfile-bulk',[App\Http\Controllers\SetFileController::class, 'DeleteUserSetfileBulk']);
 
+
+Route::get('admin/faqs',[App\Http\Controllers\FaqController::class, 'Faq']);
+Route::post('add-faq-category',[App\Http\Controllers\FaqController::class, 'storeFaqCategory']);
+
 //   Users routs
-Route::get('user/user-guide',[App\Http\Controllers\UserController::class, 'UserDashboard']);
+Route::get('user/user-guide',[App\Http\Controllers\UserController::class, 'UserGuide']);
 Route::get('user/courses',[App\Http\Controllers\UserController::class, 'UserCourses']);
 Route::get('user/setfiles',[App\Http\Controllers\UserController::class, 'UserSetfiles']);
 Route::get('user/inputs',[App\Http\Controllers\UserController::class, 'UserInputs']);
 Route::get('user/faqs',[App\Http\Controllers\UserController::class, 'UserFaq']);
+Route::get('user/dashboard',[App\Http\Controllers\UserController::class, 'UserDashboard']);
+Route::get('user/upload-history',[App\Http\Controllers\UserController::class, 'UserUploadHistory']);
+Route::get('user/account-statistics',[App\Http\Controllers\UserController::class, 'UserAccountStatistics']);
+Route::get('user/tools',[App\Http\Controllers\UserController::class, 'UserTool']);
+Route::get('user/eadownload',[App\Http\Controllers\UserController::class, 'UserEADownlaod']);
 
 
 
-
-Route::get('/user/dashboard', function () {
-    return view('users.dashboard');
-});
 

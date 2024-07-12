@@ -1,5 +1,7 @@
 @php
 $var_page = 'User-Courses';
+$var_tab = 'User-Education';
+
 @endphp
 
 @extends('componant.main-layout')

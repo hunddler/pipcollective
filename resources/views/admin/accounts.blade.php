@@ -8,6 +8,8 @@ $var_tab = 'General';
 @section('content')
 
 
+        <!--begin::Content wrapper-->
+
 <div class="card mb-5 mb-xl-8">
     <div class="card-body py-lg-8 py-sm-0 mb-4">
         <!--begin::Sign-in Method-->
@@ -446,6 +448,9 @@ $var_tab = 'General';
     </div>
     <!--end::Body-->
 </div>
+
+
+<!--end::Sign-in Method-->
 
 
 @endsection

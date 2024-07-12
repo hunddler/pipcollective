@@ -86,9 +86,11 @@
 										<!--begin::Col-->
                                         
 										<div class="col-xl-9 ps-xl-6">
+
 											<!--begin::Tables Widget 5-->
 											@yield('content')
 											<!--end::Tables Widget 5-->
+											
 										</div>
 										<!--end::Col-->
 									</div>
@@ -127,6 +129,7 @@
 		<script src="{{asset('custom/user-guide.js')}}"></script>
 		<script src="{{asset('custom/course.js')}}"></script>
 		<script src="{{asset('custom/setfile.js')}}"></script>
+		<script src="{{asset('custom/faq.js')}}"></script>
         <script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
         <script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
         <!--end::Global Javascript Bundle-->

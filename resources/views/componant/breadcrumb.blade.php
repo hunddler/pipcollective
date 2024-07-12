@@ -33,6 +33,6 @@ $tab = 'Education';
     </li>
     <!--end::Item-->
     <!--begin::Item-->
-    <li class="breadcrumb-item text-white fw-bold lh-1"></li>
+    <li class="breadcrumb-item text-white fw-bold lh-1">{{$var_page}}</li>
     <!--end::Item-->
 </ul>

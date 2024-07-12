@@ -1,6 +1,7 @@
 @php
 $var_page = 'User-setfiles';
-$var_tab = 'General';
+$var_tab = 'EA';
+
 @endphp
 
 @extends('componant.main-layout')

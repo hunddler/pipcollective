@@ -17,7 +17,14 @@ class UserController extends Controller
         $this->middleware('auth');
     }
     
+
     public function UserDashboard()
+    {
+        return view('users.dashboard');
+
+    }
+    
+    public function UserGuide()
     {
         $userguide = UserGuide::get();
         return view('users.userguide',compact('userguide'));
@@ -50,4 +57,34 @@ class UserController extends Controller
         return view('users.faq');
 
     }
+
+    public function UserUploadHistory()
+    {
+        
+        return view('users.upload-history');
+
+    }
+
+    public function UserAccountStatistics()
+    {
+        
+        return view('users.account-statistics');
+
+    }
+
+    public function UserTool()
+    {
+        
+        return view('users.tools');
+
+    }
+
+    public function UserEADownlaod()
+    {
+        
+        return view('users.ea-download');
+
+    }
+
+    
 }
