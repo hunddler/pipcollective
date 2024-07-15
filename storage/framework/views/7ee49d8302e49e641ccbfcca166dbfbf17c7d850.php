@@ -1,3 +1,14 @@
+<?php
+$tab = '';
+if($var_tab !== '')
+{
+$tab = $var_tab;
+}else
+{
+$tab = 'Education';
+}
+?>
+
 <div style="background-image: url('<?php echo e(asset('assets/media/auth/bg.png')); ?>'); background-size:cover" id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: false, lg: true}" data-kt-sticky-name="app-header-sticky" data-kt-sticky-offset="{default: false, lg: '300px'}" >
     <!--begin::Header container-->
     <div class="app-container container-xxl d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
@@ -15,6 +26,8 @@
                 <img alt="Logo" src="<?php echo e(asset('assets/media/logos/logo.png')); ?>" class="h-45px d-none d-sm-block" />
             </a>
         </div>
+
+
         <!--end::Logo-->
         <!--begin::Header wrapper-->
         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
@@ -24,17 +37,17 @@
                 <div class="menu menu-rounded menu-active-bg menu-state-primary menu-column menu-lg-row menu-title-gray-700 menu-icon-gray-500 menu-arrow-gray-500 menu-bullet-gray-500 my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
                     <!--begin:Menu item-->
                     <?php if(auth::user()->role == 'users'): ?>
-                    <div class="menu-item me-0 me-lg-2">
+                    <div class="menu-item me-0 me-lg-2 <?php if($tab == 'Dashboard'): ?> here menu-here-bg <?php endif; ?>">
                         <!--begin:Menu link-->
                         <span class="menu-link">
-                            <a href="javascript:void(0)">
+                            <a href="<?php echo e(url('user/dashboard')); ?>">
                                 <span class="menu-title">Dashboard</span>
                             </a>
                         </span>
                         <!--end:Menu link-->
                     </div>
                     <!--end:Menu item-->
-
+                       
 
                     <!--begin:Menu item-->
                     <div class="menu-item me-0 me-lg-2">
@@ -48,17 +61,27 @@
                     </div>
                     <!--end:Menu item-->
 
-                    <div class="menu-item me-0 me-lg-2">
+                    <div class="menu-item me-0 me-lg-2 <?php if($tab == 'EA'): ?> here menu-here-bg <?php endif; ?>">
                         <!--begin:Menu link-->
                         <span class="menu-link">
-                            <a href="javascript:void(0)">
+                            <a href="<?php echo e(url('user/eadownload')); ?>">
+                                <span class="menu-title">EA & Setfiles</span>
+                            </a>
+                        </span>
+                        <!--end:Menu link-->
+                    </div>
+
+                    <div class="menu-item me-0 me-lg-2 <?php if($tab == 'Calculater'): ?> here menu-here-bg <?php endif; ?>">
+                        <!--begin:Menu link-->
+                        <span class="menu-link">
+                            <a href="<?php echo e(url('user/upload-history')); ?>">
                                 <span class="menu-title">Calculators</span>
                             </a>
                         </span>
                         <!--end:Menu link-->
                     </div>
 
-                    <div class="menu-item here menu-here-bg me-0 me-lg-2">
+                    <div class="menu-item me-0 me-lg-2 <?php if($tab == 'User-Education'): ?> here menu-here-bg <?php endif; ?>">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <a href="<?php echo e(url('user/user-guide')); ?>">
@@ -71,17 +94,17 @@
 
                     <!--begin:Menu item-->
                     <?php if(auth::user()->role == 'admin'): ?>
-                    <div class="menu-item me-0 me-lg-2">
+                    <div class="menu-item me-0 <?php if($tab == 'General'): ?> here menu-here-bg <?php endif; ?> me-lg-2" onclick="gettab('General')">
                         <!--begin:Menu link-->
                         <span class="menu-link">
-                            <a href="javascript:void(0)">
+                            <a href="<?php echo e(url('admin/accounts')); ?>">
                                 <span class="menu-title">General</span>
                             </a>
                         </span>
                         <!--end:Menu link-->
                     </div>
 
-                    <div class="menu-item here menu-here-bg me-0 me-lg-2">
+                    <div class="menu-item  <?php if($tab == 'Education'): ?> here menu-here-bg <?php endif; ?> me-0 me-lg-2" onclick="gettab('Education')">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <a href="<?php echo e(url('admin/user-guide')); ?>">

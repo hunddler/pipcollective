@@ -48,6 +48,7 @@
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Custom Javascript(used for this page only)-->
 		<script src="<?php echo e(asset('assets/js/custom/authentication/sign-in/general.js')); ?>"></script>
+
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

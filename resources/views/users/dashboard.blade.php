@@ -88,7 +88,7 @@ $tab = 'Dashboard';
                     <div class="menu-item me-0 me-lg-2">
                         <!--begin:Menu link-->
                         <span class="menu-link">
-                            <a href="javascript:void(0)">
+                            <a href="{{url('user/my-accounts')}}">
                                 <span class="menu-title">My Accounts</span>
                             </a>
                         </span>
@@ -278,7 +278,7 @@ $tab = 'Dashboard';
 									<!--begin::Page title-->
 									<div class="page-title me-5">
 										<!--begin::Title-->
-										<h1 class="page-heading d-flex text-white fw-bold fs-2 flex-column justify-content-center my-2">User Guide</h1>
+										<h1 class="page-heading d-flex text-white fw-bold fs-2 flex-column justify-content-center my-2">Dashboard</h1>
 
 										<!--begin::Toolbar wrapper-->
 										<div class="d-flex align-items-center pt-1">
@@ -330,7 +330,7 @@ $tab = 'Dashboard';
 											            <!--begin::Card header-->
 											            <div class="card-header border-0 cursor-pointer" role="button">
 											                <div class="card-title m-0">
-											                    <h2 class="fw-bold m-0 ">Welcome to PipCollective 🎉</h2>
+											                    <h1 class="fw-bold m-0 ">Welcome to PipCollective 🎉</h1>
 											                </div>
 											            </div>
 											            <!--end::Card header-->
@@ -390,7 +390,7 @@ $tab = 'Dashboard';
 					                        <div class="card">
 					                            <div class="card-body">
 					                                <div class="d-flex flex-column">
-					                                    <div class="d-md-flex flex-row align-items-center gap-5">
+					                                    <div class="d-flex flex-md-row flex-row align-items-center gap-5">
 					                                        <div>
 					                                            <i class="fa-brands fa-discord fs-2hx"></i>
 					                                        </div>
@@ -415,9 +415,9 @@ $tab = 'Dashboard';
 					                        <div class="card">
 					                            <div class="card-body">
 					                                <div class="d-flex flex-column">
-					                                    <div class="d-md-flex flex-row align-items-center gap-5">
+					                                    <div class="d-flex flex-md-row flex-row align-items-center gap-5">
 					                                        <div>
-					                                            <i class="ki-duotone ki-question fs-2hx">
+					                                            <i class="ki-duotone ki-question fs-3hx">
 					                                             <span class="path1"></span>
 					                                             <span class="path2"></span>
 					                                            </i>
@@ -443,9 +443,9 @@ $tab = 'Dashboard';
 					                        <div class="card">
 					                            <div class="card-body">
 					                                <div class="d-flex flex-column">
-					                                    <div class="d-md-flex flex-row align-items-center gap-5">
+					                                    <div class="d-flex flex-md-row flex-row align-items-center gap-5">
 					                                        <div>
-					                                            <i class="ki-duotone ki-cloud-download fs-2hx">
+					                                            <i class="ki-duotone ki-cloud-download fs-3hx">
 					                                             <span class="path1"></span>
 					                                             <span class="path2"></span>
 					                                            </i>

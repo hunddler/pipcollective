@@ -52,8 +52,8 @@
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
                             <span class="required">Instructions File</span>
                         </label>
-                        <div class="col-md-12 fv-row">
-                            <div class="fv-row mb-10">
+                        <div class="col-md-12 fv-row mt-2">
+                            <div class="fv-row">
                                 <!--begin::Dropzone-->
                                 <div class="dropzone dropzone-new" id="kt_modal_create_campaign_files_upload">
                                     <!--begin::Message-->
@@ -221,8 +221,8 @@
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
                             <span class="required">Instructions File</span>
                         </label>
-                        <div class="col-md-12 fv-row">
-                            <div class="fv-row mb-10">
+                        <div class="col-md-12 fv-row mt-2">
+                            <div class="fv-row">
                                 <!--begin::Dropzone-->
                                 <div class="dropzone dropzone-update" id="kt_modal_create_campaign_files_upload">
                                     <!--begin::Message-->
@@ -334,8 +334,8 @@
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
                             <span class="required">Instructions File</span>
                         </label>
-                        <div class="col-md-12 fv-row">
-                            <div class="fv-row mb-10">
+                        <div class="col-md-12 mt-2 fv-row">
+                            <div class="fv-row">
                                 <!--begin::Dropzone-->
                                 <div class="dropzone dropzone-course" id="kt_modal_create_campaign_files_upload">
                                     <!--begin::Message-->
@@ -446,8 +446,8 @@
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
                             <span class="required">Instructions File</span>
                         </label>
-                        <div class="col-md-12 fv-row">
-                            <div class="fv-row mb-10">
+                        <div class="col-md-12 fv-row mt-2">
+                            <div class="fv-row">
                                 <!--begin::Dropzone-->
                                 <div class="dropzone dropzone-update-course" id="kt_modal_create_campaign_files_upload">
                                     <!--begin::Message-->
@@ -729,8 +729,8 @@
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
                             <span class="required">Instructions File</span>
                         </label>
-                        <div class="col-md-12 fv-row">
-                            <div class="fv-row mb-10">
+                        <div class="col-md-12 fv-row mt-2">
+                            <div class="fv-row ">
                                 <!--begin::Dropzone-->
                                 <div class="dropzone dropzone-setfile" id="kt_modal_create_campaign_files_upload">
                                     <!--begin::Message-->
@@ -834,8 +834,8 @@
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
                             <span class="required">Instructions File</span>
                         </label>
-                        <div class="col-md-12 fv-row">
-                            <div class="fv-row mb-10">
+                        <div class="col-md-12 fv-row mt-2">
+                            <div class="fv-row">
                                 <!--begin::Dropzone-->
                                 <div class="dropzone dropzone-update-setfile" id="kt_modal_create_campaign_files_upload">
                                     <!--begin::Message-->

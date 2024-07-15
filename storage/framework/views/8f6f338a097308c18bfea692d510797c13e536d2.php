@@ -1,5 +1,6 @@
 <?php
 $var_page = 'User Guide';
+$var_tab = 'Education';
 ?>
 
 
@@ -25,13 +26,18 @@ $var_page = 'User Guide';
 
                         <div class="d-flex flex-row align-items-center gap-3">
                             <div>
-                                <input type="text" id="myInput" placeholder="Search..." class="form-control input-sm" name="">
+                                <input type="text" id="myInput" placeholder="Search..." class="form-control form-control-solid p-3" name="">
+                            </div>
+
+                            
+                            <div class="d-flex justify-content-end align-items-center d-none" id="delete-selected-toolbar" data-kt-customer-table-toolbar="selected">
+                                <button type="button" class="btn btn-danger" onclick="deletebulkguide();" data-bs-toggle="modal" data-bs-target="#delete-guide-bulk">Delete Selected</button>
                             </div>
                             <div>
                                 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-        <i class="ki-outline ki-plus fs-2"></i>Add New</button> -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-guide">
-        Add User</button>
+                                <i class="ki-outline ki-plus fs-2"></i>Add New</button> -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-guide">
+                                Add User</button>
                             </div>
                         </div>
                     </div>
@@ -39,7 +45,7 @@ $var_page = 'User Guide';
                 
                     <!--begin::Table-->
                     <?php if (isset($component)) { $__componentOriginalc6ba6500e6bfea952115c941efc7d1759239a6d5 = $component; } ?>
-<?php $component = $__env->getContainer()->make(App\View\Components\CustomerTable::class, ['titleColumnName' => 'Title','data' => $userguide]); ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\CustomerTable::class, ['titleColumnName' => 'Title','data' => $userguide,'editModalId' => 'edit-user-guide','deleteModalId' => 'delete-user-guide','editFunction' => 'edituserguide','deleteFunction' => 'deleteuserguide']); ?>
 <?php $component->withName('customer-table'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
@@ -50,23 +56,21 @@ $var_page = 'User Guide';
 <?php $component = $__componentOriginalc6ba6500e6bfea952115c941efc7d1759239a6d5; ?>
 <?php unset($__componentOriginalc6ba6500e6bfea952115c941efc7d1759239a6d5); ?>
 <?php endif; ?>
-                                         <!--end::Table-->
+                    <!--end::Table-->
 
-    <div class="d-flex flex-stack flex-wrap pt-10">
-        <!--begin::Pages-->
-    <ul class="pagination">
-       
-        <?php echo e($userguide->links( "pagination::bootstrap-4")); ?>
+                    <div class="d-flex flex-stack flex-wrap pt-10">
+                        <!--begin::Pages-->
+                    <ul class="pagination">
+                        <?php echo e($userguide->links( "pagination::bootstrap-4")); ?>
 
-    
-    </ul>
-    <!--end::Pages-->
-    <div class="fs-6 fw-semibold text-gray-700">Showing <?php echo e($userguide->count()); ?> of <?php echo e($userguide->total()); ?> of <?php echo e($userguide->total()); ?> entries</div>
-    
-</div>
-    <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar"></div>
-
-
+                    </ul>
+                    <!--end::Pages-->
+                    <div class="fs-6 fw-semibold text-gray-700">Showing <?php echo e($userguide->count()); ?> of <?php echo e($userguide->total()); ?> of <?php echo e($userguide->total()); ?> entries</div>
+                    
+                </div>
+                    <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar">
+                        
+                    </div>
                 </div>
                 <!--end::Card body-->
         </div>

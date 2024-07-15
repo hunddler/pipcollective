@@ -1,3 +1,4 @@
+
 <title>Reset Password</title>
 <?php $__env->startSection('content'); ?>
     <!--begin::Card-->

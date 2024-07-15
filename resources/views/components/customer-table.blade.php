@@ -5,7 +5,6 @@
                 <div class="form-check form-check-sm form-check-custom form-check-solid">
                     <input
                         class="form-check-input"
-                        style="border: 1px solid white; margin-left: 12px;"
                         type="checkbox"
                         data-kt-check="true"
                         data-kt-check-target="#kt_customers_table .form-check-input"

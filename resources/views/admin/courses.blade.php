@@ -26,7 +26,7 @@ $var_tab = 'Education';
 
                         <div class="d-flex flex-row align-items-center gap-3">
                             <div>
-                                <input type="text"  id="myInput" placeholder="Search..." class="form-control input-sm" name="">
+                                <input type="text"  id="myInput" placeholder="Search..." class="form-control input-sm p-3 form-control-solid" name="">
                             </div>
 
                             <div class="d-flex justify-content-end align-items-center d-none" id="delete-selected-toolbar" data-kt-customer-table-toolbar="selected">
@@ -34,8 +34,9 @@ $var_tab = 'Education';
                             </div>
                             <div>
                                 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-courses">
-        Add Course</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-courses">
+                                Add Course
+                            </button>
                             </div>
                         </div>
                     </div>

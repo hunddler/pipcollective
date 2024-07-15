@@ -5,7 +5,6 @@
                 <div class="form-check form-check-sm form-check-custom form-check-solid">
                     <input
                         class="form-check-input"
-                        style="border: 1px solid white; margin-left: 12px;"
                         type="checkbox"
                         data-kt-check="true"
                         data-kt-check-target="#kt_customers_table .form-check-input"
@@ -24,7 +23,7 @@
         <tr class="card-body border-top">
             <td data-label="Select" class="mb-none" data-label="Select">
                 <div class="form-check form-check-sm form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" value="<?php echo e($item->id); ?>" />
+                    <input class="form-check-input checkbox" type="checkbox" value="<?php echo e($item->id); ?>" />
                 </div>
             </td>
 
@@ -36,12 +35,10 @@
                 <div class="action-icon">
                     <div class="d-flex  align-items-center">
                         <!--begin::Button-->
-                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5"onclick="edituserguide(<?php echo e($item->id); ?>, '<?php echo e($item->title); ?>', '<?php echo e($item->video_link); ?>', '<?php echo e($item->file_name); ?>', '<?php echo e($item->file_type); ?>')" data-bs-toggle="modal" data-bs-target="#edit-user-guide">
+                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px me-5" onclick="<?php echo e($editFunction); ?>(<?php echo e($item->id); ?>, '<?php echo e($item->title); ?>', '<?php echo e($item->video_link); ?>', '<?php echo e($item->file_name); ?>', '<?php echo e($item->file_type); ?>')" data-bs-toggle="modal" data-bs-target="#<?php echo e($editModalId); ?>">
                             <i class="ki-outline ki-pencil fs-3"></i>
                         </button>
-                        <!--end::Button-->
-                        <!--begin::Button-->
-                        <button type="button"  class="btn btn-icon btn-active-light-primary w-30px h-30px " onclick="deleteuserguide(<?php echo e($item->id); ?>)" data-bs-toggle="modal" data-bs-target="#delete-user-guide">
+                        <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px" onclick="<?php echo e($deleteFunction); ?>(<?php echo e($item->id); ?>)" data-bs-toggle="modal" data-bs-target="#<?php echo e($deleteModalId); ?>">
                             <i class="ki-outline ki-trash fs-3"></i>
                         </button>
                         <!--end::Button-->

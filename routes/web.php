@@ -62,4 +62,10 @@ Route::get('user/eadownload',[App\Http\Controllers\UserController::class, 'UserE
 
 
 
+Route::get('/user/my-accounts', function () {
+    return view('users.my-accounts');
+});
+
+
+
 
