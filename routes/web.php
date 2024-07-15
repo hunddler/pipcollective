@@ -25,7 +25,6 @@ Route::get('admin/courses',[App\Http\Controllers\AdminController::class, 'Course
 Route::post('upload-user-guide',[App\Http\Controllers\AdminController::class, 'storeUserGuide']);
 Route::post('admin/delete-user-guide',[App\Http\Controllers\AdminController::class, 'DeleteUserGuide']);
 Route::post('update-user-guide',[App\Http\Controllers\AdminController::class, 'UpdateUserGuide']);
-Route::get('admin/inputs',[App\Http\Controllers\AdminController::class, 'Inputs']);
 Route::get('admin/upload-ea',[App\Http\Controllers\AdminController::class, 'UploadEA']);
 
 
@@ -44,9 +43,30 @@ Route::post('update-setfile',[App\Http\Controllers\SetFileController::class, 'Up
 Route::post('admin/delete-setfile',[App\Http\Controllers\SetFileController::class, 'DeleteSetfile']);
 Route::post('admin/delete-setfile-bulk',[App\Http\Controllers\SetFileController::class, 'DeleteUserSetfileBulk']);
 
-
+//   FAQs routs
 Route::get('admin/faqs',[App\Http\Controllers\FaqController::class, 'Faq']);
 Route::post('add-faq-category',[App\Http\Controllers\FaqController::class, 'storeFaqCategory']);
+Route::get('get-faq-category',[App\Http\Controllers\FaqController::class, 'GetFaqCategory']);
+Route::post('update-faq-category',[App\Http\Controllers\FaqController::class, 'UpdateFaqCategory']);
+Route::get('delete-faq-category',[App\Http\Controllers\FaqController::class, 'DeleteFaqCategory']);
+Route::post('admin/add-faqs',[App\Http\Controllers\FaqController::class, 'storeFaq']);
+Route::get('get-faq-data',[App\Http\Controllers\FaqController::class, 'GetFaqEdit']);
+Route::post('admin/update-faqs',[App\Http\Controllers\FaqController::class, 'UpdateFaq']);
+Route::post('admin/delete-faq',[App\Http\Controllers\FaqController::class, 'DeleteFaq']);
+Route::post('admin/delete-faq-bulk',[App\Http\Controllers\FaqController::class, 'DeleteFaqBulk']);
+
+//   Inputs routs
+Route::get('admin/inputs',[App\Http\Controllers\InputsController::class, 'Inputs']);
+Route::post('admin/add-inputs',[App\Http\Controllers\InputsController::class, 'storeInputsCategory']);
+Route::get('get-inputs-category',[App\Http\Controllers\InputsController::class, 'GetInputsCategory']);
+Route::get('delete-inputs-category',[App\Http\Controllers\InputsController::class, 'DeleteInputsCategory']);
+Route::post('update-inputs-category',[App\Http\Controllers\InputsController::class, 'UpdateInputsCategory']);
+Route::post('admin/add-inputs',[App\Http\Controllers\InputsController::class, 'storeInputs']);
+Route::get('get-inputs-data',[App\Http\Controllers\InputsController::class, 'GetInputsEdit']);
+Route::post('admin/update-inputs',[App\Http\Controllers\InputsController::class, 'UpdateInputs']);
+Route::post('admin/delete-input',[App\Http\Controllers\InputsController::class, 'DeleteInputs']);
+Route::post('admin/delete-input-bulk',[App\Http\Controllers\InputsController::class, 'DeleteInputBulk']);
+
 
 //   Users routs
 Route::get('user/user-guide',[App\Http\Controllers\UserController::class, 'UserGuide']);

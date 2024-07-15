@@ -50,10 +50,10 @@ $tab = 'Education';
                        
 
                     <!--begin:Menu item-->
-                    <div class="menu-item me-0 me-lg-2">
+                    <div class="menu-item me-0 me-lg-2 @if($tab == 'My Accounts') here menu-here-bg @endif">
                         <!--begin:Menu link-->
                         <span class="menu-link">
-                            <a href="javascript:void(0)">
+                            <a href="{{url('user/my-accounts')}}">
                                 <span class="menu-title">My Accounts</span>
                             </a>
                         </span>

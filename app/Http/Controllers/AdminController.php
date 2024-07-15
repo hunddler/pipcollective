@@ -35,12 +35,7 @@ class AdminController extends Controller
 
     }
 
-    public function Inputs()
-    {
-    
-        return view('admin.inputs');
-
-    }
+   
 
     
 
@@ -74,7 +69,7 @@ class AdminController extends Controller
         $userGuide->title = $request->title;
         $userGuide->video_link = $request->video_link;
         $userGuide->file_name = $fileName;
-        $userGuide->file_type = $this->sendimagetodirectory($request->file('file'));;
+        $userGuide->file_type = $this->sendimagetodirectory($request->file('file'));
         $userGuide->save();
     
         return response()->json(['success' => 'User Guide uploaded successfully.']);

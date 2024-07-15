@@ -1,6 +1,6 @@
 @php
     $var_page = 'My Accounts';
-    $var_tab = 'EA';
+    $var_tab = 'My Accounts';
 @endphp
 
 @extends('componant.main-layout')

@@ -1,3 +1,63 @@
+
+<div class="modal fade" id="delete-input-bulk" style="display: none;" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-550px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal header-->
+            <div class="modal-header pb-0 border-0 justify-content-end">
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i class="ki-outline ki-cross fs-1"></i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--begin::Modal header-->
+            <!--begin::Modal body-->
+            <div id="error-messages-delete-input-bulk" style="color: red;"></div>
+
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+               <form id="inputs-bulk-form" method="POST" class="form" action="{{url('admin/delete-input-bulk')}}">
+                 @csrf
+                 
+                 <input type="hidden" id="input_delete_bulk" name="input_delete_bulk">
+                <!--begin::Heading-->
+                    <div class="mb-13 text-center">
+                        <!--begin::Title-->
+                        <h1 class="mb-3"></h1>
+                        <!--end::Title-->
+                        <!--begin::Description-->
+                        <div class="text-muted fw-semibold fs-5">
+                            
+                            <div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;"><div class="swal2-icon-content">!</div></div>
+                            
+                            <p>Are you sure you want to delete selected Inputs?</p>
+                        </div>
+                        <!--end::Description-->
+                    </div>
+                    <!--end::Heading-->
+                          
+                    <!--begin::Actions-->
+                    <div class="text-center">
+                        <button type="reset" data-bs-dismiss="modal"  class="btn btn-light me-3">Cancel</button>
+                        <button type="submit"   class="btn btn-primary">
+                            <span class="indicator-label">Delete</span>
+                            <span class="indicator-progress">Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                    </div>
+                    <!--end::Actions-->
+                </form>
+                <!--end:Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+
+
 <div class="modal fade" id="add-guide" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-550px">
@@ -1012,6 +1072,9 @@
 
 
 
+
+
+
 <div class="modal fade " id="kt_modal_add_categories" tabindex="-1" style="display: none;" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
@@ -1027,7 +1090,7 @@
                 
                 <!--end::Modal title-->
                 <!--begin::Close-->
-                <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
+                <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
                     <i class="ki-outline ki-cross fs-1"></i>
                 </div>
 
@@ -1045,10 +1108,11 @@
                     <div class="d-flex flex-column scroll-y px-5 px-lg-10" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px" style="max-height: 145px;">
                         <!--begin::Input group-->
                         <div id="error-messages-faq-category" style="color: red;"></div>
+
                         <div class="row custom-input">
                             <div class="col-md-12 d-flex flex-row align-items-center gap-3">
                         <div>
-                            <input type="text" placeholder="Add New Category" class="form-control w-100" name="title">
+                            <input type="text"  placeholder="Add New Category" class="form-control w-100 faq_cat" name="title">
                         </div>
                         <div>
                             
@@ -1063,40 +1127,113 @@
                             <label class="required  fs-6 mb-2">All Categories</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" name="search" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Search Categories" value="">
+                            <input type="text" id="" name="search" class="form-control form-control-solid mb-3 mb-lg-0 myInput" placeholder="Search Categories" value="">
                             <!--end::Input-->
                         <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
                         <!--end::Input group-->
                         </div>
                         <div class="col-md-10 m-auto">
-                            <table class="table align-middle table-row-dashed fs-6 gy-5 custom-table admin-table categories-table" id="kt_customers_table">
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 custom-table admin-table categories-table myTable" id="kt_customers_table">
                         <tbody class="fw-semibold text-gray-600">
-                            <tr class="card-body">
-
-                                <td data-label="Name" class="mb-none pl-4">EA License API Key</td>
-                                <td data-label="Status" class="text-success">
-                                    <div class="action-icon">
-                                        <div class="d-flex  align-items-end">
-                                            <!--begin::Button-->
-                                            <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px  me-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_one_time_password">
-                                                <i class="ki-outline ki-pencil fs-3"></i>
-                                            </button>
-                                            <!--end::Button-->
-                                            <!--begin::Button-->
-                                            <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px " id="kt_users_delete_two_step">
-                                                <i class="ki-outline ki-trash fs-3"></i>
-                                            </button>
-                                            <!--end::Button-->
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+              
                         
-
                         </tbody>
                         </table>
                         </div>
                     
+                    <!--end::Actions-->
+                </form>
+                <!--end::Form-->
+               
+                
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+
+
+<div class="modal fade " id="kt_modal_add_faq" tabindex="-1" style="display: none;" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="my_model modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header" id="kt_modal_add_user_header">
+                <!--begin::Modal title-->
+                <div class="my-custom-header">
+                    <h2 class="fw-bold">Create FAQ’s</h2>
+                <p>You can add or search for the category</p>
+                </div>
+                
+
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+                    <i class="ki-outline ki-cross fs-1"></i>
+                </div>
+
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body ">
+                <!--begin::Form-->
+                <form id="kt_modal_add_faq_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" method="POST" action="{{url('admin/add-faqs')}}">
+                    <!--begin::Scroll-->
+                  @csrf 
+                  
+                    <div class="d-flex flex-column scroll-y px-5 px-lg-10" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px" style="max-height: 145px;">
+                        <!--begin::Input group-->
+                        <div id="error-messages-faq" style="color: red;"></div>
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Input-->
+                            <div class="col-md-12 fv-row fv-plugins-icon-container" data-select2-id="select2-data-107-ervs">
+                                <select required id="cache_select" name="category_id" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Choose Category" name="target_assign" data-select2-id="select2-data-52-0789" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
+                                {{-- <option value="" data-select2-id="select2-data-54-42ya">Choose Category.</option> --}}
+                                {{-- <option value="1" data-select2-id="select2-data-111-tod9">Getting Started with the EA</option>
+                                <option value="2" data-select2-id="select2-data-112-qnke">Lot Size Settings</option>
+                                <option value="3" data-select2-id="select2-data-113-z12l">Equity Protector Settings</option> --}}
+                                </select>
+                                <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+
+  
+             <!--begin::Label-->
+                            <label class="required  fs-6 mb-2 mt-4">Question</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" required name="question" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Strategy Description" value="">
+                            <!--end::Input-->
+                        <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                        <!--end::Input group-->
+                        <!--begin::Label-->
+                            <label class="required  fs-6 mb-2">Answer</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <textarea class="form-control form-control-solid" required rows="3" name="answer" placeholder="Type Answer Details"></textarea>
+                            <!--end::Input-->
+                        <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                        <!--end::Input group-->
+                        <div class="col-md-10 m-auto">
+                            <!--begin::Label-->
+                            <label class="required  fs-6 mb-2">Video URL</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="link" name="video_link" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="(optional)" value="">
+                            <!--end::Input-->
+                        <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                        <!--end::Input group-->
+                        </div>
+                    <div class="text-center ">
+                        <button type="submit" class="btn add-btn btn-primary" data-kt-users-modal-action="submit">
+                            <span class="indicator-label">Add FAQ</span>
+                            <span class="indicator-progress">Please wait... 
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                    </div>
                     <!--end::Actions-->
                 </form>
                 <!--end::Form-->
@@ -1105,8 +1242,304 @@
         </div>
         <!--end::Modal content-->
     </div>
-    <!--end::Modal dialog-->
-</div>
+
+    <div class="modal fade " id="kt_modal_update_faq" tabindex="-1" style="display: none;" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <!--begin::Modal content-->
+            <div class="my_model modal-content">
+                <!--begin::Modal header-->
+                <div class="modal-header" id="kt_modal_add_user_header">
+                    <!--begin::Modal title-->
+                    <div class="my-custom-header">
+                        <h2 class="fw-bold">Update FAQ’s</h2>
+                    <p>You can add or search for the category</p>
+                    </div>
+    
+                    <!--end::Modal title-->
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+                        <i class="ki-outline ki-cross fs-1"></i>
+                    </div>
+                    <div id="error-messages-faq-edit" style="color: red;"></div>
+
+                    <!--end::Close-->
+                </div>
+                <!--end::Modal header-->
+                <!--begin::Modal body-->
+                <div class="modal-body ">
+                    <!--begin::Form-->
+                    <form id="kt_modal_update_faq_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" method="POST" action="{{url('admin/update-faqs')}}">
+                        <!--begin::Scroll-->
+                      @csrf
+                      <input type="hidden" id="faq_edit_id" name="faq_edit_id">   
+                        <div class="d-flex flex-column scroll-y px-5 px-lg-10" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px" style="max-height: 145px;">
+                            <!--begin::Input group-->
+                            
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-7 fv-plugins-icon-container">
+                                <!--begin::Input-->
+                                <div class="col-md-12 fv-row fv-plugins-icon-container" data-select2-id="select2-data-107-ervs">
+                                    <select required id="cache_select-edit" name="category_id" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Choose Category" name="target_assign" data-select2-id="select2-data-52-0789" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
+                                    {{-- <option value="" data-select2-id="select2-data-54-42ya">Choose Category.</option> --}}
+                                    {{-- <option value="1" data-select2-id="select2-data-111-tod9">Getting Started with the EA</option>
+                                    <option value="2" data-select2-id="select2-data-112-qnke">Lot Size Settings</option>
+                                    <option value="3" data-select2-id="select2-data-113-z12l">Equity Protector Settings</option> --}}
+                                    </select>
+                                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+    
+      
+                 <!--begin::Label-->
+                                <label class="required  fs-6 mb-2 mt-4">Question</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" id="faq_question" required name="question" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Strategy Description" value="">
+                                <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                            <!--end::Input group-->
+                            <!--begin::Label-->
+                                <label class="required  fs-6 mb-2">Answer</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <textarea id="faq_answer" class="form-control form-control-solid" required rows="3" name="answer" placeholder="Type Answer Details"></textarea>
+                                <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                            <!--end::Input group-->
+                            <div class="col-md-10 m-auto">
+                                <!--begin::Label-->
+                                <label class="required  fs-6 mb-2">Video URL</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="link" id="faq_video_link" name="video_link" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="(optional)" value="">
+                                <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                            <!--end::Input group-->
+                            </div>
+                        <div class="text-center ">
+                            <button type="submit" class="btn add-btn btn-primary" data-kt-users-modal-action="submit">
+                                <span class="indicator-label">Update FAQ</span>
+                                <span class="indicator-progress">Please wait... 
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                            </button>
+                        </div>
+                        <!--end::Actions-->
+                    </form>
+                    <!--end::Form-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+
+
+        <div class="modal fade" id="delete-faq" tabindex="-1" aria-hidden="true">
+            <!--begin::Modal dialog-->
+            <div class="modal-dialog modal-dialog-centered mw-550px">
+                <!--begin::Modal content-->
+                <div class="modal-content rounded">
+                    <!--begin::Modal header-->
+                    <div class="modal-header pb-0 border-0 justify-content-end">
+                        <!--begin::Close-->
+                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                            <i class="ki-outline ki-cross fs-1"></i>
+                        </div>
+                        <!--end::Close-->
+                    </div>
+                    <!--begin::Modal header-->
+                    <!--begin::Modal body-->
+                    <div id="error-messages-delete-faq" style="color: red;"></div>
+        
+                    <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                        <!--begin:Form-->
+                       <form id="delete-faq-form" method="POST" class="form" action="{{url('admin/delete-faq')}}">
+                         @csrf
+                         
+                         <input type="hidden" name="faq_delete_id" value="" id="faq_delete_id">
+                            <!--begin::Heading-->
+                            <div class="mb-13 text-center">
+                                <!--begin::Title-->
+                                <h1 class="mb-3"></h1>
+                                <!--end::Title-->
+                                <!--begin::Description-->
+                                <div class="text-muted fw-semibold fs-5">
+                                    
+                                    <div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;"><div class="swal2-icon-content">!</div></div>
+                                    
+                                    <p>Are you sure you want to delete selected FAQ?</p>
+                                </div>
+                                <!--end::Description-->
+                            </div>
+                            <!--end::Heading-->
+                                  
+                            <!--begin::Actions-->
+                            <div class="text-center">
+                                <button type="reset" data-bs-dismiss="modal"  class="btn btn-light me-3">Cancel</button>
+                                <button type="submit"   class="btn btn-primary">
+                                    <span class="indicator-label">Delete</span>
+                                    <span class="indicator-progress">Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                </button>
+                            </div>
+                            <!--end::Actions-->
+                        </form>
+                        <!--end:Form-->
+                    </div>
+                    <!--end::Modal body-->
+                </div>
+                <!--end::Modal content-->
+            </div>
+            <!--end::Modal dialog-->
+        </div>
+
+
+        <div class="modal fade" id="delete-faq-bulk" tabindex="-1" aria-hidden="true">
+            <!--begin::Modal dialog-->
+            <div class="modal-dialog modal-dialog-centered mw-550px">
+                <!--begin::Modal content-->
+                <div class="modal-content rounded">
+                    <!--begin::Modal header-->
+                    <div class="modal-header pb-0 border-0 justify-content-end">
+                        <!--begin::Close-->
+                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                            <i class="ki-outline ki-cross fs-1"></i>
+                        </div>
+                        <!--end::Close-->
+                    </div>
+                    <!--begin::Modal header-->
+                    <!--begin::Modal body-->
+                    <div id="error-messages-delete-faq-bulk" style="color: red;"></div>
+        
+                    <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                        <!--begin:Form-->
+                       <form id="faqs-bulk-form" method="POST" class="form" action="{{url('admin/delete-faq-bulk')}}">
+                         @csrf
+                         
+                         <input type="hidden" id="faq_delete_bulk" name="faq_delete_bulk">
+                        <!--begin::Heading-->
+                            <div class="mb-13 text-center">
+                                <!--begin::Title-->
+                                <h1 class="mb-3"></h1>
+                                <!--end::Title-->
+                                <!--begin::Description-->
+                                <div class="text-muted fw-semibold fs-5">
+                                    
+                                    <div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;"><div class="swal2-icon-content">!</div></div>
+                                    
+                                    <p>Are you sure you want to delete selected FAQs?</p>
+                                </div>
+                                <!--end::Description-->
+                            </div>
+                            <!--end::Heading-->
+                                  
+                            <!--begin::Actions-->
+                            <div class="text-center">
+                                <button type="reset" data-bs-dismiss="modal"  class="btn btn-light me-3">Cancel</button>
+                                <button type="submit"   class="btn btn-primary">
+                                    <span class="indicator-label">Delete</span>
+                                    <span class="indicator-progress">Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                </button>
+                            </div>
+                            <!--end::Actions-->
+                        </form>
+                        <!--end:Form-->
+                    </div>
+                    <!--end::Modal body-->
+                </div>
+                <!--end::Modal content-->
+            </div>
+            <!--end::Modal dialog-->
+        </div>
+    
+
+        <div class="modal fade " id="update-input" tabindex="-1"  aria-hidden="true">
+            <!--begin::Modal dialog-->
+            <div class="modal-dialog modal-dialog-centered mw-650px">
+                <!--begin::Modal content-->
+                <div class="my_model modal-content">
+                    <!--begin::Modal header-->
+                    <div class="modal-header">
+                        <!--begin::Modal title-->
+                        <div class="my-custom-header">
+                            <h2 class="fw-bold">Update Input</h2>
+                            <p>Choose the relavant category and add Q&A</p>
+                        </div>
+        
+                        <!--end::Modal title-->
+                        <!--begin::Close-->
+                        <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+                            <i class="ki-outline ki-cross fs-1"></i>
+                        </div>
+        
+                        <!--end::Close-->
+                    </div>
+                    <!--end::Modal header-->
+                    <!--begin::Modal body-->
+                    <div class="modal-body ">
+                        <!--begin::Form-->
+                        <form id="update_inputs_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" method="POST" action="{{url('admin/update-inputs')}}">
+                          @csrf
+                          <input type="hidden" name="input_edit_id" id="input_edit_id">  
+                            <!--begin::Scroll-->
+                            <div id="error-messages-inputs-edit" style="color: red;"></div>
+                            <div class="d-flex flex-column scroll-y px-3">
+                                <div class="fv-row fv-plugins-icon-container">
+                                    <div class="row">
+                                        <div class="col-md-12 mb-5">
+                                            <!--begin::Password-->
+                                            <div class="form-group choose-slot">
+                                                <select class="form-control selectpicker" required name="category_id" id="input_select_edit" aria-label="Default select example" data-live-search="true">
+                                                    {{-- <option value="">Choose Category</option> --}}
+                                                    {{-- <option value="1">Category name</option>
+                                                    <option value="2">Category name</option>
+                                                    <option value="3">Category</option> --}}
+                                                </select>
+                                            </div>
+                                            <!--end::Password-->
+                                        </div>
+        
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" id="inputs_question" placeholder="Question" name="question" class="form-control form-control-solid">
+                                            </div>
+                                        </div>
+        
+        
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <textarea name="answer" id="inputs_answer" required class="form-control form-control-solid" rows="3"></textarea>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="link" id="inputs_video_url" placeholder="Video URL (optional)" name="video_url" class="form-control form-control-solid">
+                                            </div>
+                                        </div>
+        
+        
+                                        <div class="col-md-12 mb-5">
+                                            <button type="submit" class="btn mt-5 btn-block w-100 save-btn btn-primary" data-kt-users-modal-action="submit">
+                                                <span class="indicator-label">Update</span>
+                                                <span class="indicator-progress">Please wait... 
+                                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                            </button>
+                                        </div>
+        
+                                    </div>
+                                </div>
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Modal body-->
+                </div>
+                <!--end::Modal content-->
+            </div>
+            <!--end::Modal dialog-->
+        </div>
+
+
+
+    
+    
 
 
 

@@ -11,6 +11,7 @@
 		<meta property="og:title" content="PipCollective" />
 		<meta property="og:url" content="https://www.pipcollective.com" />
 		<meta property="og:site_name" content="PipCollective" />
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="canonical" href="http://index.html" />
 		<link rel="shortcut icon" href="{{asset('assets/media/logos/logo.png')}}" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
@@ -131,6 +132,7 @@
 		<script src="{{asset('custom/course.js')}}"></script>
 		<script src="{{asset('custom/setfile.js')}}"></script>
 		<script src="{{asset('custom/faq.js')}}"></script>
+		<script src="{{asset('custom/inputs.js')}}"></script>
         <script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
         <script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
         <!--end::Global Javascript Bundle-->
