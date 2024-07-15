@@ -1,10 +1,10 @@
 <?php
-$var_page = 'Inputs';
+$var_page = 'FAQs';
 $var_tab = 'Education';
 ?>
 
 
-<title>Inputs</title>
+<title>FAQs</title>
 <?php $__env->startSection('content'); ?>
 
 <div class="card mb-5 mb-xl-8">
@@ -16,7 +16,7 @@ $var_tab = 'Education';
                 <div class="d-md-flex d-sm-flex flex-md-row flex-sm-column align-items-center justify-content-between align-items-start">
                     <div class="d-flex flex-column">
                         <div>
-                            <h2>Inputs</h2>
+                            <h2>FAQ's</h2>
                         </div>
                         <div>
                             <p>short description goes here</p>
@@ -434,4 +434,4 @@ $var_tab = 'Education';
     <!--end::Modal dialog-->
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('componant.main-layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\pipcollective\resources\views/admin/inputs.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('componant.main-layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\pipcollective\resources\views/admin/Faq.blade.php ENDPATH**/ ?>
